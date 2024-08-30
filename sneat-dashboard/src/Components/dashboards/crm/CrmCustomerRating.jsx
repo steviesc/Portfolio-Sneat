@@ -16,15 +16,16 @@ import StarOutlineIcon from "@mui/icons-material/StarOutline";
 
 // ** Custom Components Imports
 import OptionsMenu from "../../apps/OptionsMenu";
+import {
+  CustomerRatingsSeries,
+  CustomerRatingsData,
+} from "../../../assets/data/DashboardCRM_data";
 
-const series = [
-  { name: "Last Month", data: [20, 54, 22, 40, 20, 25, 16, 22] },
-  { name: "This Month", data: [20, 38, 27, 65, 43, 48, 32, 70] },
-];
+const series = CustomerRatingsSeries;
 
 const CrmCustomerRating = () => {
   // ** State
-  const [value] = useState(4);
+  const [value] = useState(CustomerRatingsData.rating);
 
   // ** Hook
   const theme = useTheme();
@@ -155,7 +156,7 @@ const CrmCustomerRating = () => {
               marginRight: "10px",
             }}
           >
-            +5.0
+            +{CustomerRatingsData.points}.0
           </Typography>
           {/* <CustomChip
           /> */}

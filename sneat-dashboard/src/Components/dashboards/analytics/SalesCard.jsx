@@ -6,6 +6,7 @@ import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useState } from "react";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { SalesData } from "../../../assets/data/DashboardAnalytics_data";
 
 const SalesCard = () => {
   // ** Hook
@@ -23,16 +24,7 @@ const SalesCard = () => {
 
   return (
     <Box>
-      <CardContent
-        sx={{ padding: "4px", marginBottom: "12px" }} /* sx={{ */
-        /*      padding: "18px",
-          backgroundColor: "#fff",
-          boxShadow:
-            "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-          borderRadius: "8px",
-          height: "182px", */
-        /*  }} */
-      >
+      <CardContent sx={{ padding: "4px", marginBottom: "12px" }}>
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <img
             src="https://greakproject.vercel.app/images/cards/stats-vertical-wallet.png"
@@ -80,7 +72,7 @@ const SalesCard = () => {
             marginTop: "8px",
           }}
         >
-          $4,679
+          ${SalesData.payment}
         </Typography>
         <ArrowUpwardIcon
           sx={{ color: "#71DD37", fontSize: "1.25rem", paddingTop: "6px" }}
@@ -93,7 +85,7 @@ const SalesCard = () => {
           marginTop="7px"
           display="inline"
         >
-          28.14%
+          {SalesData.percentage}%
         </Typography>
       </CardContent>
     </Box>

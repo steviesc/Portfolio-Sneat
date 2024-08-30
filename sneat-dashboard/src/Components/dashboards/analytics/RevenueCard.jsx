@@ -4,6 +4,10 @@ import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import ReactApexcharts from "react-apexcharts";
 import { Box } from "@mui/material";
+import {
+  RevenueSeries,
+  RevenueData,
+} from "../../../assets/data/DashboardAnalytics_data";
 
 const RevenueCard = () => {
   // ** Hook
@@ -88,7 +92,7 @@ const RevenueCard = () => {
             textAlign: "left",
           }}
         >
-          425k
+          {RevenueData.revenue}k
         </Typography>
       </CardContent>
       <ReactApexcharts
@@ -96,7 +100,7 @@ const RevenueCard = () => {
         height={100}
         width="100%"
         options={options}
-        series={[{ data: [23, 81, 70, 31, 99, 46, 73] }]}
+        series={RevenueSeries}
         padding="0px"
       />
     </Box>

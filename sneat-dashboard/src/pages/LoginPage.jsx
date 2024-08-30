@@ -35,14 +35,6 @@ import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-// ** Hooks
-// import { useAuth } from "src/hooks/useAuth";
-// import useBgColor from "src/@core/hooks/useBgColor";
-// import { useSettings } from "src/@core/hooks/useSettings";
-
-// ** Configs
-// import themeConfig from "src/configs/themeConfig";
-
 // ** Layout Import
 import BlankLayout from "../Components/Auth/BlankLayout";
 import { ThemeProvider } from "styled-components";
@@ -78,24 +70,24 @@ const customTheme = createTheme({
 const CustomOutlinedInput = styled(OutlinedInput)(({ theme }) => ({
   "&.MuiOutlinedInput-root": {
     "& fieldset": {
-      borderColor: "rgba(50, 71, 92, 0.22)", // 默认边框颜色
+      borderColor: "rgba(50, 71, 92, 0.22)",
     },
     "&:hover fieldset": {
-      borderColor: "rgba(50, 71, 92, 0.35)", // 悬停时的边框颜色
+      borderColor: "rgba(50, 71, 92, 0.35)",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "rgb(105, 108, 255)", // 点击（获得焦点）后的边框颜色
+      borderColor: "rgb(105, 108, 255)",
     },
   },
   input: {
-    color: "rgba(50, 71, 92, 0.87)", // 输入文本颜色
+    color: "rgba(50, 71, 92, 0.87)",
   },
 }));
 
 const CustomInputLabel = styled(InputLabel)(({ theme }) => ({
-  color: "rgba(50, 71, 92, 0.6)", // 标签颜色
+  color: "rgba(50, 71, 92, 0.6)",
   "&.Mui-focused": {
-    color: "rgb(105, 108, 255)", // 标签聚焦时颜色
+    color: "rgb(105, 108, 255)",
   },
 }));
 
@@ -137,11 +129,9 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   // ** Hooks
-  // const auth = useAuth();
   const navigate = useNavigate();
   const theme = useTheme();
-  // const { settings } = useSettings();
-  // const bgColors = useBgColor();
+
   const hidden = useMediaQuery(theme.breakpoints.down("lg"));
 
   const {
@@ -156,16 +146,31 @@ const LoginPage = () => {
   });
 
   const onSubmit = async (data, e) => {
-    e.stopPropagation();
+    console.log("submit is clicked");
     const { email, password } = data;
+    // await axiosInstance
+    //   .get("/login")
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     const user = res.data.find(
+    //       (user) => user.email === email && user.password === password
+    //     );
+    //     if (user) {
+    //       navigate("/dashboards/analytics");
+    //     } else {
+    //       setError("email", {
+    //         type: "manual",
+    //         message: "Email or Password is invalid",
+    //       });
+    //     }
+    //   })
+    //   .catch((err) => {
+    //     console.error("Error: ", err.message);
+    //   });
     await axiosInstance
-      .get(`/login`)
+      .post("/login", { email, password })
       .then((res) => {
-        console.log(res.data);
-        const user = res.data.find(
-          (user) => user.email === email && user.password === password
-        );
-        if (user) {
+        if (res.data.success) {
           navigate("/dashboards/analytics");
         } else {
           setError("email", {
@@ -208,10 +213,6 @@ const LoginPage = () => {
           </Box>
         ) : null}
         <RightWrapper
-          // sx={{
-          //   ...(skin === "bordered" &&
-          //     !hidden && { borderLeft: `1px solid ${theme.palette.divider}` }),
-          // }}
           sx={{
             ...(!hidden && {
               borderLeft: `1px solid ${theme.palette.divider}`,
@@ -308,28 +309,27 @@ const LoginPage = () => {
                       error={Boolean(errors.email)}
                       placeholder="admin@sneat.com"
                       sx={{
-                        // 设置默认输入框的颜色
                         "& .MuiOutlinedInput-root": {
                           "& fieldset": {
-                            borderColor: "rgba(50, 71, 92, 0.22)", // 输入框默认边框颜色
+                            borderColor: "rgba(50, 71, 92, 0.22)",
                           },
                           "&:hover fieldset": {
-                            borderColor: "rgba(50, 71, 92, 0.35)", // 悬停时边框颜色
+                            borderColor: "rgba(50, 71, 92, 0.35)",
                           },
                           "&.Mui-focused fieldset": {
-                            borderColor: "rgb(105, 108, 255)", // 点击时边框颜色
+                            borderColor: "rgb(105, 108, 255)",
                           },
                         },
-                        // 设置输入框文本的颜色
+
                         "& .MuiInputBase-input": {
-                          color: "rgba(50, 71, 92, 0.87)", // 输入框文本颜色
+                          color: "rgba(50, 71, 92, 0.87)",
                         },
                       }}
                       InputLabelProps={{
                         sx: {
-                          color: "rgba(50, 71, 92, 0.6)", // 标签颜色
+                          color: "rgba(50, 71, 92, 0.6)",
                           "&.Mui-focused": {
-                            color: "rgb(105, 108, 255)", // 标签聚焦时颜色
+                            color: "rgb(105, 108, 255)",
                           },
                         },
                       }}
@@ -430,7 +430,7 @@ const LoginPage = () => {
                   mb: 2,
                   backgroundColor: "rgb(105, 108, 255)",
                   "&:hover": {
-                    backgroundColor: "rgba(85, 88, 255)", // 悬停时的背景颜色
+                    backgroundColor: "rgba(85, 88, 255)",
                   },
                   transition: "0.2s ease-in-out",
                 }}

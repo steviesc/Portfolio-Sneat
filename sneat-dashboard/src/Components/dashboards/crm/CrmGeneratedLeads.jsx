@@ -8,8 +8,9 @@ import ReactApexcharts from "react-apexcharts";
 
 // ** Icons Imports
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { GeneratedLeadsSeries } from "../../../assets/data/DashboardCRM_data";
 
-const series = [23, 27, 22, 28];
+const series = GeneratedLeadsSeries;
 
 const CrmGeneratedLeads = () => {
   // ** Hook

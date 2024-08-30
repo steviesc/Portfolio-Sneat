@@ -3,16 +3,11 @@ import Grid from "@mui/material/Grid";
 
 // ** Demo Component Imports
 import EcommerceAward from "../../Components/dashboards/eCommerce/EcommerceAward";
-import EcommerceSales from "../../Components/dashboards/analytics/SalesCard";
-// import EcommerceTable from 'src/views/dashboards/ecommerce/EcommerceTable'
 import EcommerceProfit from "../../Components/dashboards/eCommerce/EcommerceProfit";
-// import EcommerceRevenue from 'src/views/dashboards/ecommerce/EcommerceRevenue'
 import EcommerceNewVisitor from "../../Components/dashboards/eCommerce/EcommerceNewVisitor";
 import EcommerceTotalIncome from "../../Components/dashboards/eCommerce/EcommerceTotalIncome";
 import EcommercePerformance from "../../Components/dashboards/eCommerce/EcommercePerformance";
 import EcommerceSalesTarget from "../../Components/dashboards/eCommerce/EcommerceSalesTarget";
-// import EcommerceTransactions from 'src/views/dashboards/ecommerce/EcommerceTransactions'
-// import EcommerceTotalBalance from 'src/views/dashboards/ecommerce/EcommerceTotalBalance'
 import EcommerceConversionRate from "../../Components/dashboards/eCommerce/EcommerceConversionRate";
 import EcommerceExpensesRadialBar from "../../Components/dashboards/eCommerce/EcommerceExpenseRadialBar";
 import CardTemplate from "../../Components/dashboards/CardTemplate";

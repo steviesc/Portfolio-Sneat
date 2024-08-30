@@ -65,20 +65,6 @@ const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(","),
   },
-  // overrides: {
-  //   MuiAppBar: {
-  //     root: {
-  //       position: "sticky",
-  //       top: 0,
-  //     },
-  //   },
-  // },
-  // MuiToolbar: {
-  //   root: {
-  //     position: "sticky",
-  //     top: 0,
-  //   },
-  // },
 });
 
 const SearchModal = styled(Modal)(({ theme }) => ({

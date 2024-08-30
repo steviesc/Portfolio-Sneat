@@ -14,7 +14,6 @@ import Checkbox from "@mui/material/Checkbox";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import InputAdornment from "@mui/material/InputAdornment";
 import ListItem from "@mui/material/ListItem";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -36,12 +35,7 @@ import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 import LabelOutlinedIcon from "@mui/icons-material/LabelOutlined";
 import axiosInstance from "../../request";
 
-// ** Email App Component Imports
-// import { setTimeout } from "timers";
-// import EmailDetails from "./EmailDetails";
 import { useLocation, useParams } from "react-router-dom";
-import { Login } from "@mui/icons-material";
-import axios from "axios";
 
 const MailItem = styled(ListItem)(({ theme }) => ({
   cursor: "pointer",
@@ -180,25 +174,6 @@ const EmailLogs = (props) => {
     setEmailsSelected(props.emails);
   }, [props.emails]);
 
-  //刷新方面怎么写？？
-  // useEffect(() => {
-  //   console.log("useEffect executed");
-
-  //   const resetDatabase = async () => {
-  //     try {
-  //       const response = await axios.get(baseUrl + "/reset");
-  //       console.log(response); // 检查 response.data 是否存在
-  //     } catch (error) {
-  //       console.error("Error resetting database:", error.message);
-  //     }
-  //   };
-  //   resetDatabase();
-  //   return () => {
-  //     console.log("Cleanup function called");
-  //   };
-  //   // 如果有需要清理的内容，在这里进行清理
-  // }, [emailsSelected]);
-
   const handleStarMail = async (e, id, value) => {
     e.stopPropagation();
     try {
@@ -224,7 +199,6 @@ const EmailLogs = (props) => {
   const handleReadMail = async (e, ids, value) => {
     e.stopPropagation();
     console.log(ids, value);
-    // 确保 ids 是一个数组
     const emailIds = Array.isArray(ids) ? ids : [ids];
     try {
       await axiosInstance.post("/updateMail", {
@@ -260,7 +234,6 @@ const EmailLogs = (props) => {
   const handleLabelUpdate = async (emailIds, label) => {
     try {
       const ids = Array.isArray(emailIds) ? emailIds : [emailIds];
-      // 检查标签是否已经存在
       const emailsToUpdate = emailsSelected.filter((email) =>
         ids.includes(email.id)
       );
@@ -275,10 +248,9 @@ const EmailLogs = (props) => {
               ? [...emailsToUpdate[0].labels, label]
               : [label],
           };
-      // 调用后端接口更新数据库中的邮件标签
       await axiosInstance.post("/updateMail", {
         emailIds: ids,
-        dataToUpdate: { labels: dataToUpdate.labels }, // 直接设置更新的标签数组
+        dataToUpdate: { labels: dataToUpdate.labels },
       });
       await pathToEmails();
     } catch (error) {
@@ -311,13 +283,10 @@ const EmailLogs = (props) => {
   };
   const handleSelectAllMail = async () => {
     try {
-      // 判断当前是否有未选中的邮件
       const isSelecting = emailsSelected.some((email) => !email.isSelected);
 
-      // 获取所有邮件的ID
       const emailIds = emailsSelected.map((email) => email.id);
 
-      // 更新数据库中的 `isSelected` 字段
       await axiosInstance.post("/updateMail", {
         emailIds: emailIds,
         dataToUpdate: { isSelected: isSelecting },
@@ -330,20 +299,18 @@ const EmailLogs = (props) => {
 
   const handleMoveToTrash = async () => {
     try {
-      // 获取所有选中的邮件的 ID
       const selectedEmailIds = emailsSelected
         .filter((email) => email.isSelected)
         .map((email) => email.id);
 
       if (selectedEmailIds.length > 0) {
-        // 更新数据库
         await axiosInstance.post("/updateMail", {
           emailIds: selectedEmailIds,
           dataToUpdate: { folder: "trash", isSelected: false },
         });
         await pathToEmails();
 
-        console.log("选中的邮件已移至垃圾箱");
+        console.log("selected email has moved to trash");
       }
     } catch (error) {
       console.error("Error moving mails to trash:", error);
@@ -419,7 +386,7 @@ const EmailLogs = (props) => {
         overflow: "hidden",
         position: "relative",
         "& .ps__rail-y": { zIndex: 5 },
-        borderLeft: "1px solid rgba(50, 71, 92, 0.12)", // 添加竖线
+        borderLeft: "1px solid rgba(50, 71, 92, 0.12)",
       }}
     >
       <Box sx={{ height: "100%", backgroundColor: "background.paper" }}>
@@ -550,16 +517,6 @@ const EmailLogs = (props) => {
                       ))}
                     </Menu>
                   </Box>
-                  {/* <OptionsMenu
-                    leftAlignMenu
-                    // options={handleFoldersMenu()}
-                    icon={<FolderOpenIcon />}
-                  />
-                  <OptionsMenu
-                    leftAlignMenu
-                    // options={handleLabelsMenu()}
-                    icon={<LabelImportantIcon />}
-                  /> */}
                 </Fragment>
               ) : null}
             </Box>
@@ -599,19 +556,8 @@ const EmailLogs = (props) => {
                     }}
                     onClick={(e) => {
                       e.stopPropagation();
-                      // setMailDetailsOpen(true);
-                      //   dispatch(getCurrentMail(mail.id));
                       handleMailDetail(mail);
-                      // console.log("mailDetailsOpen:", mailDetailsOpen);
                       handleReadMail(e, mail.id, true);
-                      //   setTimeout(() => {
-                      //     dispatch(handleSelectAllMail(false));
-                      //   }, 600);
-                      // console.log("Mail item clicked:", mail); // 调试输出
-                      // setCurrentMail(mail); // 设置当前邮件
-                      // setMailDetailsOpen(true); // 打开邮件详情
-                      // handleReadMail(e, mail.id, true); // 将邮件标记为已读
-                      // console.log(mailDetailsOpen);
                     }}
                   >
                     <Box

@@ -13,18 +13,12 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
-
 // ** Icon Imports
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import SendIcon from "@mui/icons-material/Send";
-import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
-import ReportGmailerrorredIcon from "@mui/icons-material/ReportGmailerrorred";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
-import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import SearchIcon from "@mui/icons-material/Search";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
@@ -37,39 +31,21 @@ import AttachmentIcon from "@mui/icons-material/Attachment";
 import DetailsMenu from "../../Components/apps/DetailsMenu";
 import { Menu, MenuItem } from "@mui/material";
 
-//** Hooks
-
-// import { useSettings } from "src/@core/hooks/useSettings";
-
-// ** Custom Components Imports
-// import Sidebar from 'src/@core/components/sidebar'
-// import CustomChip from 'src/@core/components/mui/chip'
-// import OptionsMenu from 'src/@core/components/option-menu'
-
 // ** CSS styles for animation
 const emailDetailsStyle = {
   transition: "transform 0.5s ease-in-out", // smooth slide animation
   transform: "translateX(100%)", // start off-screen to the right
-  position: "absolute", // 绝对定位
+  position: "absolute",
   top: 0,
   right: 0,
   bottom: 0,
 };
 
-// const bgColors = useBgColor();
-// const colors = {
-//   primary: { ...bgColors.primaryLight },
-//   secondary: { ...bgColors.secondaryLight },
-//   success: { ...bgColors.successLight },
-//   error: { ...bgColors.errorLight },
-//   warning: { ...bgColors.warningLight },
-//   info: { ...bgColors.infoLight },
-// };
 const emailDetailsOpenStyle = {
   transform: "translateX(0)", // slide into view
-  width: "100%", // 控制宽度，显示或隐藏
-  overflow: "auto", // 控制 overflow 属性
-  display: "block", // 控制显示和隐藏
+  width: "100%",
+  overflow: "auto",
+  display: "block",
 };
 
 const HiddenReplyBack = styled(Box)(({ theme }) => ({
@@ -107,12 +83,6 @@ const HiddenReplyFront = styled(Box)(({ theme }) => ({
 const EmailDetails = (props) => {
   // ** Props
   const {
-    // mail,
-    // hidden,
-    // folders,
-    // dispatch,
-    // direction,
-    // updateMail,
     pathToEmails,
     currentMail,
     setCurrentMail,
@@ -166,27 +136,6 @@ const EmailDetails = (props) => {
       }
     }
   };
-  // const prevMailIcon =
-  //   direction === "rtl" ? "bx:chevron-right" : "bx:chevron-left";
-  // const nextMailIcon =
-  //   direction === "rtl" ? "bx:chevron-left" : "bx:chevron-right";
-  // const goBackIcon = prevMailIcon;
-
-  // const ScrollWrapper = ({ children }) => {
-  //   if (hidden) {
-  //     return (
-  //       <Box sx={{ height: "100%", overflowY: "auto", overflowX: "hidden" }}>
-  //         {children}
-  //       </Box>
-  //     );
-  //   } else {
-  //     return (
-  //       <PerfectScrollbar options={{ wheelPropagation: false }}>
-  //         {children}
-  //       </PerfectScrollbar>
-  //     );
-  //   }
-  // };
 
   // Helper function to convert hex color to rgba with transparency
   const rgbToRgba = (rgb, alpha) => {

@@ -12,7 +12,6 @@ import DoneAllIcon from "@mui/icons-material/DoneAll";
 
 // ** Third Party Components
 import PerfectScrollbarComponent from "react-perfect-scrollbar";
-// import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 
 // ** Custom Components Imports
@@ -23,12 +22,6 @@ const PerfectScrollbar = styled(PerfectScrollbarComponent)(({ theme }) => ({
 }));
 
 const ChatLog = (props) => {
-  // ** Props
-  // data={{
-  //   ...selectedChat,
-  //   userContact: chatsAll.profileUser,
-  //   selectedChatContact,
-  // }}
   const { data, hidden, getInitials, selectedChat, setSelectedChat } = props;
   console.log("data:", data);
 
@@ -266,7 +259,7 @@ const ChatLog = (props) => {
         <PerfectScrollbar ref={chatArea} options={{ wheelPropagation: true }}>
           <Box
             sx={{
-              height: "100%", // 确保容器占满父元素的高度
+              height: "100%",
             }}
           >
             {children}

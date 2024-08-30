@@ -19,6 +19,10 @@ import WalletIcon from "@mui/icons-material/Wallet";
 // ** Components Imports
 import MuiAvatar from "@mui/material/Avatar";
 import ReactApexcharts from "react-apexcharts";
+import {
+  TotalRevenueSeries,
+  TotalRevenueData,
+} from "../../../assets/data/DashboardAnalytics_data";
 
 const yearOptions = [
   new Date().getFullYear() - 1,
@@ -26,13 +30,7 @@ const yearOptions = [
   new Date().getFullYear() - 3,
 ];
 
-const series = [
-  { name: `${new Date().getFullYear() - 1}`, data: [18, 7, 15, 29, 18, 12, 9] },
-  {
-    name: `${new Date().getFullYear() - 2}`,
-    data: [-13, -18, -9, -14, -5, -17, -15],
-  },
-];
+const series = TotalRevenueSeries;
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
@@ -328,7 +326,7 @@ const TotalRevenueCard = () => {
               <ReactApexcharts
                 type="radialBar"
                 height={200}
-                series={[78]}
+                series={[TotalRevenueData.growth]}
                 options={radialBarOptions}
               />
               <Typography
@@ -339,7 +337,7 @@ const TotalRevenueCard = () => {
                   marginBottom: "30px",
                 }}
               >
-                62% Company Growth
+                {TotalRevenueData.growth_company}% Company Growth
               </Typography>
             </Box>
             <Box
@@ -379,7 +377,7 @@ const TotalRevenueCard = () => {
                       color: "rgba(50, 71, 92, 0.87)",
                     }}
                   >
-                    $32.5k
+                    ${TotalRevenueData.revenue_cy}k
                   </Typography>
                 </Box>
               </Box>
@@ -412,7 +410,7 @@ const TotalRevenueCard = () => {
                       color: "rgba(50, 71, 92, 0.87)",
                     }}
                   >
-                    $41.2k
+                    ${TotalRevenueData.revenue_py}k
                   </Typography>
                 </Box>
               </Box>

@@ -6,8 +6,12 @@ import CardContent from "@mui/material/CardContent";
 
 // ** Custom Components Imports
 import ReactApexcharts from "react-apexcharts";
+import {
+  SessionsSeries,
+  Sessions,
+} from "../../../assets/data/DashboardCRM_data";
 
-const series = [{ data: [26, 26, 24, 24, 22, 22, 26, 26, 30] }];
+const series = SessionsSeries;
 
 const CrmSessions = () => {
   // ** Hook
@@ -104,7 +108,7 @@ const CrmSessions = () => {
             color: "rgba(50, 71, 92, 0.87) !important",
           }}
         >
-          2845
+          {Sessions}
         </Typography>
       </CardContent>
       <ReactApexcharts

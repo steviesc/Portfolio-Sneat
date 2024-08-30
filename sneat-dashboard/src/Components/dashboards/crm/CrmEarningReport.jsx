@@ -8,41 +8,14 @@ import CardContent from "@mui/material/CardContent";
 import ReactApexcharts from "react-apexcharts";
 
 // ** Icons Imports
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 // ** Custom Components Imports
 import CustomAvatar from "../../apps/CustomAvatar";
 import OptionsMenu from "../../apps/OptionsMenu";
+import { EarningReportsData } from "../../../assets/data/DashboardCRM_data";
 
-const data = [
-  {
-    amount: "$1,619",
-    percentage: 18.6,
-    title: "Net Profit",
-    avatarColor: "rgb(105, 108, 255)",
-    subtitle: "12.4k Sales",
-    avatarIcon: <TrendingUpIcon />,
-  },
-  {
-    amount: "$3,571",
-    percentage: 39.6,
-    title: "Total Income",
-    avatarColor: "rgb(113, 221, 55)",
-    subtitle: "Sales, Affiliation",
-    avatarIcon: <AttachMoneyIcon />,
-  },
-  {
-    amount: "$430",
-    percentage: 52.8,
-    title: "Total Expenses",
-    avatarColor: "rgb(133, 146, 163)",
-    subtitle: "ADVT, Marketing",
-    avatarIcon: <CreditCardIcon />,
-  },
-];
+const data = EarningReportsData;
 
 const CrmEarningReport = () => {
   // ** Hooks

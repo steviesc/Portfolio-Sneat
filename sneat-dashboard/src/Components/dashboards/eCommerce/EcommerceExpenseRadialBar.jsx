@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 
 // ** Custom Components Imports
 import ReactApexcharts from "react-apexcharts";
+import { ExpenseRadialBarData } from "../../../assets/data/DashboardEcommerce_data";
 
 const EcommerceExpensesRadialBar = () => {
   const theme = useTheme();
@@ -57,13 +58,13 @@ const EcommerceExpensesRadialBar = () => {
           type="radialBar"
           height={138}
           options={options}
-          series={[72]}
+          series={[ExpenseRadialBarData.percentage]}
         />
         <Typography
           variant="body2"
           sx={{ mt: 2, textAlign: "center", color: "text.disabled" }}
         >
-          $2k Expenses more
+          ${ExpenseRadialBarData.expensediff}k Expenses more
         </Typography>
         <Typography
           variant="body2"

@@ -10,17 +10,9 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 // ** Custom Component Imports
 import ReactApexcharts from "react-apexcharts";
+import { ExpenseBarSeries } from "../../../assets/data/DashboardEcommerce_data";
 
-const series = [
-  {
-    name: `${new Date().getFullYear() - 1}`,
-    data: [12, 32, 12, 27, 39, 27, 17, 9, 12, 20],
-  },
-  {
-    name: `${new Date().getFullYear() - 2}`,
-    data: [-28, -20, -27, -15, -21, -17, -19, -12, -30, -18],
-  },
-];
+const series = ExpenseBarSeries;
 
 const EcommerceExpensesBar = () => {
   // ** Hook
@@ -61,14 +53,6 @@ const EcommerceExpensesBar = () => {
         filter: { type: "none" },
       },
     },
-    // plotOptions: {
-    //   bar: {
-    //     borderRadius: 6,
-    //     columnWidth: "40%",
-    //     endingShape: "flat",
-    //     startingShape: "rounded",
-    //   },
-    // },
     plotOptions: {
       bar: {
         borderRadius: 5,

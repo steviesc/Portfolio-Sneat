@@ -5,6 +5,7 @@ import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useState } from "react";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { PaymentData } from "../../../assets/data/DashboardAnalytics_data";
 
 const PaymentsCard = () => {
   // ** Hook
@@ -69,7 +70,7 @@ const PaymentsCard = () => {
             marginTop: "8px",
           }}
         >
-          $2,468
+          ${PaymentData.payment.toLocaleString()}
         </Typography>
         <ArrowDownwardIcon
           sx={{ color: "#FF3E1D", fontSize: "1.25rem", paddingTop: "6px" }}
@@ -82,7 +83,7 @@ const PaymentsCard = () => {
           marginTop="7px"
           display="inline"
         >
-          14.82%
+          {Math.abs(PaymentData.percentage)}%
         </Typography>
       </CardContent>
     </Box>

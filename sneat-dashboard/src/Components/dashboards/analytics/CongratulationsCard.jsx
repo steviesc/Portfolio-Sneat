@@ -6,10 +6,9 @@ import {
   Button,
   Box,
   styled,
-  createTheme,
 } from "@mui/material";
 import congratulationsImage from "../../../assets/illustration-john-light.png";
-import { ThemeProvider } from "@emotion/react";
+import { CongradsData } from "../../../assets/data/DashboardAnalytics_data";
 
 const StyledCard = styled(Card)(({ theme }) => ({
   display: "flex",
@@ -43,8 +42,8 @@ const CongratulationsCard = () => {
           variant="body1"
           sx={{ color: "rgba(50, 71, 92, 0.6)", paddingTop: "5px" }}
         >
-          You have done 72% more sales today. Check your new badge in your
-          profile.
+          You have done {CongradsData.sales}% more sales today. Check your new
+          badge in your profile.
         </Typography>
         <Button
           variant="outlined"

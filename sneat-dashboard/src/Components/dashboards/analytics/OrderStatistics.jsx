@@ -6,51 +6,13 @@ import Typography from "@mui/material/Typography";
 import CardHeader from "@mui/material/CardHeader";
 import CardContent from "@mui/material/CardContent";
 
-// ** Icons Imports
-import SmartphoneIcon from "@mui/icons-material/Smartphone";
-import CheckroomIcon from "@mui/icons-material/Checkroom";
-import HomeIcon from "@mui/icons-material/Home";
-import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
-
 // ** Custom Components Import
 import OptionsMenu from "../../apps/OptionsMenu";
 import ReactApexcharts from "react-apexcharts";
 import CustomAvatar from "../../apps/CustomAvatar";
+import { OrderData } from "../../../assets/data/DashboardAnalytics_data";
 
-const data = [
-  {
-    amount: "82.5k",
-    title: "Electronic",
-    avatarColor: "rgb(105, 108, 255)",
-    subtitle: "Mobile, Earbuds, TV",
-    avatarIcon: <SmartphoneIcon />,
-    bgColor: "rgba(105, 108, 255, 0.16)",
-  },
-  {
-    amount: "23.8k",
-    title: "Fashion",
-    avatarColor: "rgb(113, 221, 55)",
-    subtitle: "Tshirt, Jeans, Shoes",
-    avatarIcon: <CheckroomIcon />,
-    bgColor: "rgba(113, 221, 55, 0.16)",
-  },
-  {
-    amount: 849,
-    title: "Decor",
-    avatarColor: "rgb(3, 195, 236)",
-    subtitle: "Fine Art, Dining",
-    avatarIcon: <HomeIcon />,
-    bgColor: "rgba(3, 195, 236, 0.16)",
-  },
-  {
-    amount: 99,
-    title: "Sports",
-    avatarColor: "rgb(133, 146, 163)",
-    subtitle: "Football, Cricket Kit",
-    avatarIcon: <SportsSoccerIcon />,
-    bgColor: "rgb(133, 146, 163,0.16)",
-  },
-];
+const data = OrderData;
 
 const OrderStatistics = () => {
   // ** Hooks

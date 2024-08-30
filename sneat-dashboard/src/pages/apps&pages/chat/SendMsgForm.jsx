@@ -21,7 +21,7 @@ const ChatFormWrapper = styled(Box)(({ theme }) => ({
   justifyContent: "space-between",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: theme.palette.background.paper,
-  height: "55px", // 调整高度以变细
+  height: "55px",
 }));
 
 const Form = styled("form")(({ theme }) => ({
@@ -41,14 +41,6 @@ const SendMsgForm = (props) => {
 
   // ** State
   const [msg, setMsg] = useState("");
-
-  //   const handleSendMsg = (e) => {
-  //     e.preventDefault();
-  //     if (store && store.selectedChat && msg.trim().length) {
-  //       dispatch(sendMsg({ ...store.selectedChat, message: msg }));
-  //     }
-  //     setMsg("");
-  //   };
 
   const handleSendMsg = (e) => {
     e.preventDefault();

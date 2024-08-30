@@ -11,15 +11,12 @@ import { styled, useTheme } from "@mui/material/styles";
 // ** Custom Components Imports
 import OptionsMenu from "../../apps/OptionsMenu";
 import ReactApexcharts from "react-apexcharts";
+import {
+  TotalIncomeSeries,
+  TotalIncomeData,
+} from "../../../assets/data/DashboardEcommerce_data";
 
-const series = [
-  {
-    name: "Income",
-    data: [
-      3350, 3350, 4800, 4800, 2950, 2950, 1800, 1800, 3750, 3750, 5700, 5700,
-    ],
-  },
-];
+const series = TotalIncomeSeries;
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
   [theme.breakpoints.down("md")]: {
@@ -30,34 +27,7 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   },
 }));
 
-const data = [
-  {
-    title: "Income",
-    avatarWidth: 20,
-    stats: "$42,845",
-    trendNumber: 2.7,
-    avatarHeight: 22,
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/paypal-primary.png",
-  },
-  {
-    avatarWidth: 20,
-    title: "Expense",
-    stats: "$38,658",
-    avatarHeight: 22,
-    trend: "negative",
-    trendNumber: 1.15,
-    avatarSrc: "https://greakproject.vercel.app/images/cards/shopping-bag.png",
-  },
-  {
-    title: "Profit",
-    avatarWidth: 22,
-    stats: "$18,220",
-    avatarHeight: 21,
-    trendNumber: 1.34,
-    avatarSrc: "https://greakproject.vercel.app/images/cards/wallet-info.png",
-  },
-];
+const data = TotalIncomeData.data;
 
 const EcommerceTotalIncome = () => {
   // ** Hook

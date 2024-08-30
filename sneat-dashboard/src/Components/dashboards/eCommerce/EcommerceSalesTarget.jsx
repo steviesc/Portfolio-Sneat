@@ -4,6 +4,7 @@ import Card from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
 import LinearProgress from "@mui/material/LinearProgress";
+import { SalesTargetData } from "../../../assets/data/DashboardEcommerce_data";
 
 const EcommerceSalesTarget = () => {
   return (
@@ -18,7 +19,7 @@ const EcommerceSalesTarget = () => {
           variant="h5"
           sx={{ mb: 1, color: "rgba(50, 71, 92, 0.87)" }}
         >
-          482k
+          {SalesTargetData.sales}k
         </Typography>
         {/* <CustomChip
           rounded
@@ -46,14 +47,14 @@ const EcommerceSalesTarget = () => {
             marginRight: "10px",
           }}
         >
-          +34%
+          +{SalesTargetData.growth}%
         </Typography>
         <Typography variant="body2" sx={{ color: "text.disabled", mt: 2 }}>
           Sales Target
         </Typography>
         <Box sx={{ width: "100%", display: "flex", alignItems: "center" }}>
           <LinearProgress
-            value={78}
+            value={SalesTargetData.target}
             variant="determinate"
             sx={{
               mr: 1,

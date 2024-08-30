@@ -8,45 +8,9 @@ import CardContent from "@mui/material/CardContent";
 
 // ** Custom Components Import
 import OptionsMenu from "../../apps/OptionsMenu";
+import { TransactionsData } from "../../../assets/data/DashboardAnalytics_data";
 
-const data = [
-  {
-    title: "Paypal",
-    amount: "+82.6",
-    subtitle: "Send money ",
-    imgSrc: "https://greakproject.vercel.app/images/cards/paypal.png",
-  },
-  {
-    title: "Wallet",
-    amount: "+270.69",
-    subtitle: "Mac'D",
-    imgSrc: "https://greakproject.vercel.app/images/cards/wallet.png",
-  },
-  {
-    title: "Transfer",
-    amount: "+637.91",
-    subtitle: "Refund",
-    imgSrc: "https://greakproject.vercel.app/images/cards/chart.png",
-  },
-  {
-    amount: "-838.71",
-    title: "Credit Card",
-    subtitle: "Ordered Food",
-    imgSrc: "https://greakproject.vercel.app/images/cards/credit-card.png",
-  },
-  {
-    title: "Wallet",
-    amount: "+203.33",
-    subtitle: "Starbucks",
-    imgSrc: "https://greakproject.vercel.app/images/cards/wallet.png",
-  },
-  {
-    amount: "-92.45",
-    title: "Mastercard",
-    subtitle: "Ordered Food",
-    imgSrc: "https://greakproject.vercel.app/images/cards/atm-card.png",
-  },
-];
+const data = TransactionsData;
 
 const Transactions = () => {
   return (

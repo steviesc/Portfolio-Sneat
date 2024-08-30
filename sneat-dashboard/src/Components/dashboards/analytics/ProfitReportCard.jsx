@@ -9,10 +9,13 @@ import CardContent from "@mui/material/CardContent";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 // ** Component Imports
-// import CustomChip from "src/@core/components/mui/chip";
+import {
+  ProfitReportSeries,
+  ProfitReportData,
+} from "../../../assets/data/DashboardAnalytics_data";
 import ReactApexcharts from "react-apexcharts";
 
-const series = [{ data: [30, 58, 35, 53, 50, 68] }];
+const series = ProfitReportSeries;
 
 const ProfitReportCard = () => {
   // ** Hook
@@ -155,7 +158,7 @@ const ProfitReportCard = () => {
                   fontSize: "0.875rem",
                 }}
               >
-                68.2%
+                {ProfitReportData.percentage}%
               </Typography>
             </Box>
             <Typography
@@ -166,7 +169,7 @@ const ProfitReportCard = () => {
                 color: "rgba(50, 71, 92, 0.87)",
               }}
             >
-              $84,686k
+              ${ProfitReportData.profit.toLocaleString()}k
             </Typography>
           </div>
         </Box>

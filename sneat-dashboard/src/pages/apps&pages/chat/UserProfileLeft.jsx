@@ -255,14 +255,14 @@ const UserProfileLeft = (props) => {
                         defaultChecked
                         sx={{
                           "& .MuiSwitch-switchBase.Mui-checked": {
-                            color: "rgb(105, 108, 255)", // 修改开关按钮颜色
+                            color: "rgb(105, 108, 255)",
                             "&:hover": {
-                              backgroundColor: "rgba(105, 108, 255, 0.08)", // 修改开关按钮悬停时的背景颜色
+                              backgroundColor: "rgba(105, 108, 255, 0.08)", 
                             },
                           },
                           "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track":
                             {
-                              backgroundColor: "rgb(105, 108, 255)", // 修改轨道颜色
+                              backgroundColor: "rgb(105, 108, 255)", 
                             },
                         }}
                       />
@@ -287,14 +287,14 @@ const UserProfileLeft = (props) => {
                         defaultChecked
                         sx={{
                           "& .MuiSwitch-switchBase.Mui-checked": {
-                            color: "rgb(105, 108, 255)", // 修改开关按钮颜色
+                            color: "rgb(105, 108, 255)", 
                             "&:hover": {
-                              backgroundColor: "rgba(105, 108, 255, 0.08)", // 修改开关按钮悬停时的背景颜色
+                              backgroundColor: "rgba(105, 108, 255, 0.08)", 
                             },
                           },
                           "& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track":
                             {
-                              backgroundColor: "rgb(105, 108, 255)", // 修改轨道颜色
+                              backgroundColor: "rgb(105, 108, 255)", 
                             },
                         }}
                       />

@@ -4,11 +4,9 @@ import { useTheme } from "@mui/material/styles";
 import CardHeader from "@mui/material/CardHeader";
 import Typography from "@mui/material/Typography";
 import ReactApexcharts from "react-apexcharts";
+import { SalesActivitiesSeries } from "../../../assets/data/DashboardCRM_data";
 
-const series = [
-  { name: "Product A", data: [77, 50, 59, 67, 48, 84, 64] },
-  { name: "Product B", data: [20, 23, 27, 27, 30, 18, 25] },
-];
+const series = SalesActivitiesSeries;
 
 const CrmSalesActivity = () => {
   // ** Hook

@@ -20,7 +20,6 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
 
 // ** Icon Imports
-// import Icon from 'src/@core/components/icon'
 import RemoveIcon from "@mui/icons-material/Remove";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -280,9 +279,6 @@ const EmailCompose = (props) => {
             renderOption={(props, option) =>
               renderListItem(props, option, emailTo, setEmailTo)
             }
-            // renderTags={(array, getTagProps) =>
-            //   renderCustomChips(array, getTagProps, emailTo, setEmailTo)
-            // }
             renderTags={(array, getTagProps) =>
               array.map((item, index) => (
                 <Chip
@@ -400,7 +396,6 @@ const EmailCompose = (props) => {
           px: 2.5,
           display: "flex",
           alignItems: "center",
-          // borderBottom: (theme) => `1px solid ${theme.palette.divider}`,
         }}
       >
         <div>

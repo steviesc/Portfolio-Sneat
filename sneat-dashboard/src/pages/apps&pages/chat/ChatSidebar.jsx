@@ -41,7 +41,7 @@ const ScrollWrapper = ({ children, hidden }) => {
       <PerfectScrollbar options={{ wheelPropagation: true }}>
         <Box
           sx={{
-            height: "100%", // 确保容器占满父元素的高度
+            height: "100%",
           }}
         >
           {children}
@@ -70,9 +70,7 @@ const ChatSidebar = (props) => {
     formatDateToMonthShort,
     handleLeftSidebarToggle,
     handleUserProfileLeftSidebarToggle,
-    selectedChat,
     setSelectedChat,
-    selectedChatContact,
     setSelectedChatContact,
   } = props;
 
@@ -116,28 +114,6 @@ const ChatSidebar = (props) => {
         console.error("Error: ", err.message);
       });
   }, [location.pathname]);
-
-  // useEffect(() => {
-  //   if (chatsAll.chats) {
-  //     if (active !== null) {
-  //       if (active.type === "contact" && active.id === chats[0].id) {
-  //         setActive({ type: "chat", id: active.id });
-  //       }
-  //     }
-  //   }
-  // }, [chats, active]);
-
-  // useEffect(() => {
-  //   router.events.on("routeChangeComplete", () => {
-  //     setActive(null);
-  //     dispatch(removeSelectedChat());
-  //   });
-  //   return () => {
-  //     setActive(null);
-  //     dispatch(removeSelectedChat());
-  //   };
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
 
   const hasActiveId = (id) => {
     if (chatsAll !== null) {
@@ -472,11 +448,11 @@ const ChatSidebar = (props) => {
     if (chatsAll !== null && chatsAll.contacts !== null) {
       const searchFilterFunction = (contact) =>
         contact.fullName.toLowerCase().includes(e.target.value.toLowerCase());
-      // 过滤 contacts
+      // filter contacts
       const filteredContactsArr =
         chatsAll.contacts.filter(searchFilterFunction);
       setFilteredContacts(filteredContactsArr);
-      // 过滤 chats
+      // filter chats
       const filteredChatsArr = chatsAll.chats.filter((chat) => {
         const contact = chatsAll.contacts.find((c) => c.id === chat.id);
         return contact && searchFilterFunction(contact);
@@ -572,7 +548,7 @@ const ChatSidebar = (props) => {
               "& .MuiInputBase-root": {
                 borderRadius: 5,
                 "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgb(105, 108, 255)", // 设置聚焦时的边框颜色
+                  borderColor: "rgb(105, 108, 255)",
                 },
               },
             }}

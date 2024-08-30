@@ -43,9 +43,7 @@ const ChatContent = (props) => {
   // ** Props
   const {
     hidden,
-    // sendMsg,
     mdAbove,
-    // dispatch,
     statusObj,
     getInitials,
     sidebarWidth,

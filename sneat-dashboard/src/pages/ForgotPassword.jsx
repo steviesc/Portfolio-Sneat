@@ -14,9 +14,6 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import BlankLayout from "../Components/Auth/BlankLayout";
 import { ThemeProvider } from "styled-components";
 
-// ** Hooks
-// import { useSettings } from "src/@core/hooks/useSettings";
-
 // Styled Components
 const styles = {
   link: {
@@ -74,11 +71,8 @@ const RightWrapper = styled(Box)(({ theme }) => ({
 const ForgotPassword = () => {
   // ** Hooks
   const theme = useTheme();
-  //   const { settings } = useSettings();
   const hidden = useMediaQuery(theme.breakpoints.down("lg"));
 
-  // ** Var
-  //   const { skin } = settings;
 
   return (
     <ThemeProvider theme={customTheme}>
@@ -174,28 +168,27 @@ const ForgotPassword = () => {
                 sx={{
                   display: "flex",
                   mb: 3,
-                  // 设置默认输入框的颜色
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(50, 71, 92, 0.22)", // 输入框默认边框颜色
+                      borderColor: "rgba(50, 71, 92, 0.22)", 
                     },
                     "&:hover fieldset": {
-                      borderColor: "rgba(50, 71, 92, 0.35)", // 悬停时边框颜色
+                      borderColor: "rgba(50, 71, 92, 0.35)",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "rgb(105, 108, 255)", // 点击时边框颜色
+                      borderColor: "rgb(105, 108, 255)", 
                     },
                   },
-                  // 设置输入框文本的颜色
+      
                   "& .MuiInputBase-input": {
-                    color: "rgba(50, 71, 92, 0.87)", // 输入框文本颜色
+                    color: "rgba(50, 71, 92, 0.87)", 
                   },
                 }}
                 InputLabelProps={{
                   sx: {
-                    color: "rgba(50, 71, 92, 0.6)", // 标签颜色
+                    color: "rgba(50, 71, 92, 0.6)", 
                     "&.Mui-focused": {
-                      color: "rgb(105, 108, 255)", // 标签聚焦时颜色
+                      color: "rgb(105, 108, 255)", 
                     },
                   },
                 }}
@@ -209,7 +202,7 @@ const ForgotPassword = () => {
                   mb: 2,
                   backgroundColor: "rgb(105, 108, 255)",
                   "&:hover": {
-                    backgroundColor: "rgba(85, 88, 255)", // 悬停时的背景颜色
+                    backgroundColor: "rgba(85, 88, 255)",
                   },
                   transition: "0.2s ease-in-out",
                 }}

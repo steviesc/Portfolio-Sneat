@@ -14,34 +14,13 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 // ** Custom Components Imports
 import OptionsMenu from "../../apps/OptionsMenu";
 import ReactApexcharts from "react-apexcharts";
+import {
+  ConversionRateSeries,
+  ConversionRateData,
+} from "../../../assets/data/DashboardEcommerce_data";
 
-const data = [
-  {
-    change: "positive",
-    changePercent: 12.8,
-    title: "Impressions",
-    subtitle: "12.4k Visits",
-  },
-  {
-    change: "negative",
-    changePercent: 8.3,
-    title: "Added To Cart",
-    subtitle: "32 Product in cart",
-  },
-  {
-    title: "Checkout",
-    change: "positive",
-    changePercent: 9.12,
-    subtitle: "21 Product checkout",
-  },
-  {
-    title: "Purchased",
-    change: "positive",
-    changePercent: 2.24,
-    subtitle: "12 Orders",
-  },
-];
-const series = [{ data: [30, 58, 45, 68] }];
+const data = ConversionRateData;
+const series = ConversionRateSeries;
 
 const EcommerceConversionRate = () => {
   // ** Hooks

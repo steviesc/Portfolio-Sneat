@@ -1,5 +1,9 @@
 // ** React Imports
 import { useState } from "react";
+import {
+  IncomeData,
+  IncomeSeries,
+} from "../../../assets/data/DashboardAnalytics_data";
 
 // ** MUI Import
 import Box from "@mui/material/Box";
@@ -20,40 +24,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 // ** Custom Components Imports
 import ReactApexcharts from "react-apexcharts";
 
-const series = [{ data: [24, 21, 30, 22, 42, 26, 35, 29] }];
-
-const data = {
-  income: {
-    difference: 39,
-    title: "Income",
-    stats: "$459.1k",
-    trendNumber: 42.9,
-    progressValue: 6.5,
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/wallet-with-bg.png",
-    series: [{ name: "Income", data: [24, 21, 30, 22, 42, 26, 35, 29] }],
-  },
-  expenses: {
-    difference: 16,
-    stats: "$316.5k",
-    title: "Expenses",
-    trend: "negative",
-    trendNumber: 27.8,
-    progressValue: 7.2,
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/wallet-with-bg.png",
-    series: [{ name: "Expenses", data: [24, 21, 30, 22, 42, 26, 35, 29] }],
-  },
-  profit: {
-    difference: 28,
-    title: "Profit",
-    stats: "$147.9k",
-    trendNumber: 35.1,
-    progressValue: 4.2,
-    avatarSrc: "https://greakproject.vercel.app/images/cards/chart.png",
-    series: [{ name: "Profit", data: [24, 21, 30, 22, 42, 26, 35, 29] }],
-  },
-};
+const data = IncomeData;
 
 // Styled TabList component
 const TabList = styled(MuiTabList)(({ theme }) => ({
@@ -169,7 +140,7 @@ const IncomeStatistics = () => {
           seriesIndex: 0,
           fillColor: theme.palette.common.white,
           strokeColor: "rgb(105, 108, 255)",
-          dataPointIndex: series[0].data.length - 1,
+          dataPointIndex: IncomeSeries[0].data.length - 1,
         },
       ],
     },
@@ -242,7 +213,7 @@ const IncomeStatistics = () => {
             type="area"
             height={222}
             options={options}
-            series={series}
+            series={IncomeSeries}
           />
           <Box
             sx={{

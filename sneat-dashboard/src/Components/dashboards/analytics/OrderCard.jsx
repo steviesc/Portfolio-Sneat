@@ -6,8 +6,7 @@ import CardContent from "@mui/material/CardContent";
 // ** Custom Components Imports
 import ReactApexcharts from "react-apexcharts";
 import { Box } from "@mui/material";
-
-const series = [{ data: [30, 70, 35, 55, 45, 70] }];
+import { OrderSeries } from "../../../assets/data/DashboardAnalytics_data";
 
 const OrderCard = () => {
   // ** Hook
@@ -24,7 +23,7 @@ const OrderCard = () => {
       width: 3,
       curve: "smooth",
       lineCap: "round",
-      colors: ["#71DD37"], // 浅绿色
+      colors: ["#71DD37"],
     },
     grid: {
       show: false,
@@ -84,8 +83,8 @@ const OrderCard = () => {
           size: 6,
           seriesIndex: 0,
           fillColor: theme.palette.common.white,
-          strokeColor: "#71DD37", // 浅绿色
-          dataPointIndex: series[0].data.length - 1,
+          strokeColor: "#71DD37",
+          dataPointIndex: OrderSeries[0].data.length - 1,
         },
       ],
     },
@@ -122,7 +121,7 @@ const OrderCard = () => {
         height={90}
         width="100%"
         options={options}
-        series={series}
+        series={OrderSeries}
         // overflow="hidden"
       />
     </Box>

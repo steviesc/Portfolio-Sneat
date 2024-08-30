@@ -6,6 +6,7 @@ import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useState } from "react";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import { OrderData } from "../../../assets/data/DashboardCRM_data";
 
 const CrmOrderCard = () => {
   // ** Hook
@@ -80,7 +81,7 @@ const CrmOrderCard = () => {
             marginTop: "8px",
           }}
         >
-          $1,286
+          ${OrderData.order.toLocaleString()}
         </Typography>
         <ArrowDownwardIcon
           sx={{
@@ -97,7 +98,7 @@ const CrmOrderCard = () => {
           marginTop="7px"
           display="inline"
         >
-          13.24%
+          {Math.abs(OrderData.percentage)}%
         </Typography>
       </CardContent>
     </Box>

@@ -12,6 +12,10 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 // ** Custom Components Imports
 import ReactApexcharts from "react-apexcharts";
+import {
+  NewVisitorData,
+  ActivityData,
+} from "../../../assets/data/DashboardEcommerce_data";
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
@@ -246,7 +250,7 @@ const EcommerceNewVisitor = () => {
                   variant="h4"
                   sx={{ mb: 2, color: "rgba(50, 71, 92, 0.87)" }}
                 >
-                  23%
+                  {NewVisitorData.percentage}%
                 </Typography>
                 <Box
                   sx={{
@@ -260,7 +264,7 @@ const EcommerceNewVisitor = () => {
                     variant="body2"
                     sx={{ fontWeight: 500, color: "rgb(255, 62, 29)" }}
                   >
-                    8.75%
+                    {Math.abs(NewVisitorData.growth)}%
                   </Typography>
                 </Box>
               </Box>
@@ -269,7 +273,7 @@ const EcommerceNewVisitor = () => {
                 width={190}
                 height={140}
                 options={barOptions}
-                series={[{ data: [20, 60, 53, 25, 42, 86, 55] }]}
+                series={NewVisitorData.series}
               />
             </Box>
           </StyledGrid>
@@ -308,7 +312,7 @@ const EcommerceNewVisitor = () => {
                   variant="h4"
                   sx={{ mb: 2, color: "rgba(50, 71, 92, 0.87)" }}
                 >
-                  82%
+                  {ActivityData.percentage}%
                 </Typography>
                 <Box
                   sx={{
@@ -322,7 +326,7 @@ const EcommerceNewVisitor = () => {
                     variant="body2"
                     sx={{ fontWeight: 500, color: "rgb(113, 221, 55)" }}
                   >
-                    19.6%
+                    {ActivityData.growth}%
                   </Typography>
                 </Box>
               </Box>
@@ -331,7 +335,7 @@ const EcommerceNewVisitor = () => {
                 width={190}
                 height={140}
                 options={areaOptions}
-                series={[{ data: [14, 22, 17, 40, 12, 35, 25] }]}
+                series={ActivityData.series}
               />
             </Box>
           </StyledGrid2>

@@ -10,11 +10,12 @@ import CardContent from "@mui/material/CardContent";
 // ** Custom Components Imports
 import OptionsMenu from "../../apps/OptionsMenu";
 import ReactApexcharts from "react-apexcharts";
+import {
+  PerformanceSeries,
+  PerformanceData,
+} from "../../../assets/data/DashboardEcommerce_data";
 
-const series = [
-  { name: "Income", data: [26, 29, 31, 40, 29, 24] },
-  { name: "Earning", data: [30, 26, 24, 26, 24, 40] },
-];
+const series = PerformanceSeries;
 
 const EcommercePerformance = () => {
   // ** Hook
@@ -105,7 +106,7 @@ const EcommercePerformance = () => {
                 component="span"
                 sx={{ fontWeight: 500, display: "inline-block" }}
               >
-                $846.17
+                ${PerformanceData.earning}
               </Box>
             </Typography>
           </Grid>
@@ -118,7 +119,7 @@ const EcommercePerformance = () => {
                 component="span"
                 sx={{ fontWeight: 500, display: "inline-block" }}
               >
-                25.7M
+                {PerformanceData.sales}M
               </Box>
             </Typography>
           </Grid>

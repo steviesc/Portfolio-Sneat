@@ -14,7 +14,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // 如果路径是 /login，则只渲染 LoginPage
+  // if path is /login，only render LoginPage
   if (location.pathname === "/login") {
     return <LoginPage />;
   } else if (location.pathname === "/register") {

@@ -10,89 +10,10 @@ import MuiDivider from "@mui/material/Divider";
 
 // ** Custom Components Import
 import OptionsMenu from "../../apps/OptionsMenu";
+import { VolumeData, SalesData } from "../../../assets/data/DashboardCRM_data";
 
-const salesData = [
-  {
-    amount: "$98,348",
-    subtitle: "Oneplus",
-    title: "Oneplus Nord",
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-oneplus-nord-error.png",
-  },
-  {
-    amount: "$15,459",
-    subtitle: "Xiaomi",
-    title: "Smart Band 4",
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-xiaomi-band.png",
-  },
-  {
-    amount: "$4,589",
-    subtitle: "Microsoft",
-    title: "Surface Pro X ",
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-microsoft-surface.png",
-  },
-  {
-    amount: "$84,345",
-    subtitle: "Apple",
-    title: "iPhone 13",
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-apple-iPhone.png",
-  },
-  {
-    subtitle: "Beats",
-    amount: "$10,3748",
-    title: "Bluetooth Earphone",
-    avatarSrc:
-      "	https://greakproject.vercel.app/images/cards/avatar-beats-headphone.png",
-  },
-];
-
-const volumeData = [
-  {
-    subtitle: "HP",
-    amount: "12.4k",
-    title: "ENVY Laptop",
-    differenceNumber: 12.4,
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-hp-envy.png",
-  },
-  {
-    title: "Apple",
-    amount: "74.9k",
-    subtitle: "iMac Pro",
-    differenceNumber: 8.5,
-    difference: "negative",
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-apple-iMac.png",
-  },
-  {
-    amount: "4.4k",
-    subtitle: "Fitbit",
-    title: "Smart Watch",
-    differenceNumber: 17.6,
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-fitbit-watch.png",
-  },
-  {
-    amount: "12.34k",
-    subtitle: "Oneplus",
-    title: "Oneplus Nord",
-    differenceNumber: 13.9,
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-oneplus-nord-success.png",
-  },
-  {
-    amount: "8.65k",
-    title: "Pixel 4a",
-    subtitle: "Google",
-    difference: "negative",
-    differenceNumber: 11.8,
-    avatarSrc:
-      "https://greakproject.vercel.app/images/cards/avatar-google-pixel.png",
-  },
-];
+const salesData = SalesData;
+const volumeData = VolumeData;
 
 // Styled Divider component
 const Divider = styled(MuiDivider)(({ theme }) => ({

@@ -6,8 +6,12 @@ import CardContent from "@mui/material/CardContent";
 
 // ** Custom Components Imports
 import ReactApexcharts from "react-apexcharts";
+import {
+  ProfitSeries,
+  ProfitData,
+} from "../../../assets/data/DashboardEcommerce_data";
 
-const series = [{ data: [11, 7, 11, 20] }, { data: [9, 5, 15, 18] }];
+const series = ProfitSeries;
 
 const EcommerceProfit = () => {
   // ** Hook
@@ -113,7 +117,7 @@ const EcommerceProfit = () => {
           Profit
         </Typography>
         <Typography variant="h5" sx={{ color: "rgba(50, 71, 92, 0.87)" }}>
-          624k
+          {ProfitData.profit}k
         </Typography>
       </CardContent>
       <ReactApexcharts

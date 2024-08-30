@@ -113,14 +113,6 @@ const UserAcct = (props) => {
           open={Boolean(anchorEl)}
           onClose={() => handleDropdownClose()}
           sx={{ "& .MuiMenu-paper": { width: 230, mt: 4 } }}
-          // anchorOrigin={{
-          //   vertical: "bottom",
-          //   horizontal: direction === "ltr" ? "right" : "left",
-          // }}
-          // transformOrigin={{
-          //   vertical: "top",
-          //   horizontal: direction === "ltr" ? "right" : "left",
-          // }}
         >
           <Box sx={{ py: 2, px: 4 }}>
             <Box sx={{ display: "flex", alignItems: "center" }}>

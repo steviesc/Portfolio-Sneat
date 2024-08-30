@@ -9,7 +9,6 @@ import Dashboard_Ecommerce from "../pages/dashboard/Dashboard_Ecommerce";
 import EmailLayout from "../pages/apps&pages/EmailLayout";
 import EmailLogs from "../pages/apps&pages/EmailLogs";
 import ChatLayout from "../pages/apps&pages/chat/ChatLayout";
-// import Email from "../pages/apps&pages/EmailView";
 
 export default [
   {

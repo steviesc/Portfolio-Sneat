@@ -29,15 +29,9 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import GoogleIcon from "@mui/icons-material/Google";
 
-// ** Configs
-// import themeConfig from "src/configs/themeConfig";
-
 // ** Layout Import
 import BlankLayout from "../Components/Auth/BlankLayout";
 import { ThemeProvider } from "styled-components";
-
-// ** Hooks
-// import { useSettings } from "src/@core/hooks/useSettings";
 
 // ** Styled Components
 const styles = {
@@ -70,24 +64,24 @@ const customTheme = createTheme({
 const CustomOutlinedInput = styled(OutlinedInput)(({ theme }) => ({
   "&.MuiOutlinedInput-root": {
     "& fieldset": {
-      borderColor: "rgba(50, 71, 92, 0.22)", // 默认边框颜色
+      borderColor: "rgba(50, 71, 92, 0.22)",
     },
     "&:hover fieldset": {
-      borderColor: "rgba(50, 71, 92, 0.35)", // 悬停时的边框颜色
+      borderColor: "rgba(50, 71, 92, 0.35)",
     },
     "&.Mui-focused fieldset": {
-      borderColor: "rgb(105, 108, 255)", // 点击（获得焦点）后的边框颜色
+      borderColor: "rgb(105, 108, 255)",
     },
   },
   input: {
-    color: "rgba(50, 71, 92, 0.87)", // 输入文本颜色
+    color: "rgba(50, 71, 92, 0.87)",
   },
 }));
 
 const CustomInputLabel = styled(InputLabel)(({ theme }) => ({
-  color: "rgba(50, 71, 92, 0.6)", // 标签颜色
+  color: "rgba(50, 71, 92, 0.6)",
   "&.Mui-focused": {
-    color: "rgb(105, 108, 255)", // 标签聚焦时颜色
+    color: "rgb(105, 108, 255)",
   },
 }));
 
@@ -126,7 +120,6 @@ const Register = () => {
 
   // ** Hooks
   const theme = useTheme();
-  //   const { settings } = useSettings();
   const hidden = useMediaQuery(theme.breakpoints.down("lg"));
   const { register, handleSubmit } = useForm();
   const navigate = useNavigate();
@@ -142,10 +135,9 @@ const Register = () => {
         username,
       });
       if (res.status === 201) {
-        // 假设成功注册返回状态码 201
-        navigate("/dashboards/analytics"); // 跳转到指定路径
+        navigate("/dashboards/analytics");
       } else {
-        console.error("注册失败");
+        console.error("registration failed");
       }
     } catch (error) {
       console.error("Error updating mail star status:", error);
@@ -180,10 +172,6 @@ const Register = () => {
           </Box>
         ) : null}
         <RightWrapper
-          // sx={{
-          //   ...(skin === "bordered" &&
-          //     !hidden && { borderLeft: `1px solid ${theme.palette.divider}` }),
-          // }}
           sx={{
             ...(!hidden && {
               borderLeft: `1px solid ${theme.palette.divider}`,
@@ -245,28 +233,27 @@ const Register = () => {
                 autoFocus
                 fullWidth
                 sx={{
-                  mb: 2, // 设置默认输入框的颜色
+                  mb: 2,
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(50, 71, 92, 0.22)", // 输入框默认边框颜色
+                      borderColor: "rgba(50, 71, 92, 0.22)",
                     },
                     "&:hover fieldset": {
-                      borderColor: "rgba(50, 71, 92, 0.35)", // 悬停时边框颜色
+                      borderColor: "rgba(50, 71, 92, 0.35)",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "rgb(105, 108, 255)", // 点击时边框颜色
+                      borderColor: "rgb(105, 108, 255)",
                     },
                   },
-                  // 设置输入框文本的颜色
                   "& .MuiInputBase-input": {
-                    color: "rgba(50, 71, 92, 0.87)", // 输入框文本颜色
+                    color: "rgba(50, 71, 92, 0.87)",
                   },
                 }}
                 InputLabelProps={{
                   sx: {
-                    color: "rgba(50, 71, 92, 0.6)", // 标签颜色
+                    color: "rgba(50, 71, 92, 0.6)",
                     "&.Mui-focused": {
-                      color: "rgb(105, 108, 255)", // 标签聚焦时颜色
+                      color: "rgb(105, 108, 255)",
                     },
                   },
                 }}
@@ -278,28 +265,28 @@ const Register = () => {
                 fullWidth
                 label="Email"
                 sx={{
-                  mb: 2, // 设置默认输入框的颜色
+                  mb: 2,
                   "& .MuiOutlinedInput-root": {
                     "& fieldset": {
-                      borderColor: "rgba(50, 71, 92, 0.22)", // 输入框默认边框颜色
+                      borderColor: "rgba(50, 71, 92, 0.22)",
                     },
                     "&:hover fieldset": {
-                      borderColor: "rgba(50, 71, 92, 0.35)", // 悬停时边框颜色
+                      borderColor: "rgba(50, 71, 92, 0.35)",
                     },
                     "&.Mui-focused fieldset": {
-                      borderColor: "rgb(105, 108, 255)", // 点击时边框颜色
+                      borderColor: "rgb(105, 108, 255)",
                     },
                   },
-                  // 设置输入框文本的颜色
+
                   "& .MuiInputBase-input": {
-                    color: "rgba(50, 71, 92, 0.87)", // 输入框文本颜色
+                    color: "rgba(50, 71, 92, 0.87)",
                   },
                 }}
                 InputLabelProps={{
                   sx: {
-                    color: "rgba(50, 71, 92, 0.6)", // 标签颜色
+                    color: "rgba(50, 71, 92, 0.6)",
                     "&.Mui-focused": {
-                      color: "rgb(105, 108, 255)", // 标签聚焦时颜色
+                      color: "rgb(105, 108, 255)",
                     },
                   },
                 }}
@@ -369,7 +356,7 @@ const Register = () => {
                   mb: 2,
                   backgroundColor: "rgb(105, 108, 255)",
                   "&:hover": {
-                    backgroundColor: "rgba(85, 88, 255)", // 悬停时的背景颜色
+                    backgroundColor: "rgba(85, 88, 255)",
                   },
                   transition: "0.2s ease-in-out",
                 }}

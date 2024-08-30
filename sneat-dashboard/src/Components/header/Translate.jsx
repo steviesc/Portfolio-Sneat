@@ -44,13 +44,13 @@ export default function Translate() {
           aria-haspopup="true"
           aria-expanded={open ? "true" : undefined}
           onClick={handleClick}
-          disableRipple //禁用按钮的涟漪效果
+          disableRipple
           sx={{
             color: "gray",
             width: "100%",
             height: "100%",
             "&:hover": {
-              backgroundColor: "transparent", // 移除 Button 的 hover 背景颜色
+              backgroundColor: "transparent",
             },
           }}
         >

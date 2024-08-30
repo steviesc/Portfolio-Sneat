@@ -12,7 +12,6 @@ import {
   Divider,
   createTheme,
 } from "@mui/material";
-import RevenueChart from "../../Components/dashboards/analytics/RevenueChart"; // 确保这个组件已经实现
 import CongratulationsCard from "../../Components/dashboards/analytics/CongratulationsCard";
 import { ThemeProvider } from "@emotion/react";
 import OrderCard from "../../Components/dashboards/analytics/OrderCard";
@@ -63,13 +62,11 @@ const theme = createTheme({
 });
 const StyledCard = styled(Card)(({ theme }) => ({
   boxShadow: "0 4px 20px 0 rgba(0,0,0,0.12)",
-  // borderRadius: theme.shape.borderRadius,
   height: "100%",
   borderRadius: "8px",
 }));
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
-  // borderRadius: theme.shape.borderRadius,
   padding: theme.spacing(2),
   textAlign: "left",
   color: theme.palette.text.secondary,

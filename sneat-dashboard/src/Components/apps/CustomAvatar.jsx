@@ -5,9 +5,6 @@ import { forwardRef } from "react";
 import MuiAvatar from "@mui/material/Avatar";
 import { lighten, useTheme } from "@mui/material/styles";
 
-// ** Util Imports
-// import { hexToRGBA } from "src/@core/utils/hex-to-rgba";
-
 const hexToRGBA = (hexCode, opacity) => {
   let hex = hexCode.replace("#", "");
   if (hex.length === 3) {

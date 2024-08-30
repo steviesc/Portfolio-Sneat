@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import CardContent from "@mui/material/CardContent";
+import { AwardData } from "../../../assets/data/DashboardEcommerce_data";
 
 // Styled component for the trophy image
 const TrophyImg = styled("img")({
@@ -32,10 +33,10 @@ const EcommerceAward = () => {
           variant="h5"
           sx={{ color: "rgb(105, 108, 255)", fontSize: "1.625rem !important" }}
         >
-          $48.9k
+          ${AwardData.sales}k
         </Typography>
         <Typography variant="body2" sx={{ mb: 1.5, color: "text.disabled" }}>
-          78% of target
+          {AwardData.percentage}% of target
         </Typography>
         <Button
           size="small"
@@ -43,7 +44,7 @@ const EcommerceAward = () => {
           sx={{
             backgroundColor: "rgb(105, 108, 255)",
             "&:hover": {
-              backgroundColor: "rgb(85, 87, 255)", // 悬停时的背景颜色
+              backgroundColor: "rgb(85, 87, 255)",
             },
           }}
         >
